@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Home from "../Home/Home";
-import User from "../User/User";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div>
+    <div className="navbarContainer">
       <ul>
         <li>
-          <Link to="/home">
-            <Home />
-          </Link>
+          <Link to="/home">Home</Link>
         </li>
         <li>
-          <Link to={{ pathname: `users` }}>
-            <User />
-          </Link>
+          <Link to={{ pathname: `users` }}>User</Link>
         </li>
       </ul>
     </div>

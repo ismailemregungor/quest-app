@@ -1,7 +1,8 @@
 import React from "react";
+import "./User.css";
 
 function User() {
-  return <div>User</div>;
+  return <div className="userCointainer">User</div>;
 }
 
 export default User;
