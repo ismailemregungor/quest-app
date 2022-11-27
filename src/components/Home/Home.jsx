@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Post from "../Post/Post";
 import "./Home.css";
+import Container from "@mui/material/Container";
 
 function Home() {
   const [error, setError] = useState(null);
@@ -9,7 +10,7 @@ function Home() {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/?id=1")
+    fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -29,12 +30,12 @@ function Home() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="homeContainer">
+      <Container fixed className="homeContainer">
         Home
         {postList.map((post) => (
-          <Post title={post.title} text={post.text}></Post>
+          <Post userId={post.userId} title={post.title} body={post.body}></Post>
         ))}
-      </div>
+      </Container>
     );
   }
 }
